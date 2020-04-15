@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 
 class Page2 extends StatelessWidget {
-  final String _param;
+  static const String route = '/page2';
 
   const Page2(this._param);
+
+  final String _param;
 
   @override
   Widget build(BuildContext context) {
@@ -12,9 +14,16 @@ class Page2 extends StatelessWidget {
         title: Text('Page 2'),
       ),
       body: Center(
-        child: RaisedButton(
-            onPressed: ()=> _handlingBack(context),
-            child: Text('Go back')
+        child: Column(
+          children: <Widget>[
+            Text('Param: $_param'),
+            SizedBox(
+              height: 10,
+            ),
+            RaisedButton(
+                onPressed: () => _handlingBack(context),
+                child: Text('Go back')),
+          ],
         ),
       ),
     );
